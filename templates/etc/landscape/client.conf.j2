@@ -1,10 +1,12 @@
 [client]
+access_group = {{ landscape_access_group }}
 account_name = {{ landscape_account_name }}
 computer_title = {{ landscape_computer_title }}
 data_path = {{ landscape_client_data_path }}
 include_manager_plugins = ScriptExecution
 log_level = {{ landscape_client_log_level }}
 ping_url = {{ landscape_client_ping_url }}
+script_users = {{ landscape_script_users }}
 {% if landscape_client_app_server_config %}
 ssl_public_key = {{ landscape_client_app_server_cert }}
 {% endif %}
