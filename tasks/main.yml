@@ -6,4 +6,4 @@
 - include: config.yml
 
 - include: register.yml
-  when: landscape_client_app_server_config
+  when: landscape_client_server_on_prem
