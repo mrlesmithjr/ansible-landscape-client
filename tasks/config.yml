@@ -1,20 +1,20 @@
 ---
-- name: config | Capturing Landscape App Server Cert
+- name: config | Capture Landscape Server SSL public key (Self-Hosted)
   slurp:
-    src: "{{ landscape_client_app_ssl_cert_file }}"
+    src: "{{ landscape_client_server_ssl_cert }}"
   become: true
-  register: "_landscape_client_app_ssl_cert"
-  delegate_to: "{{ landscape_client_app_server }}"
-  when: landscape_client_app_server_config
+  register: "_landscape_client_ssl_cert"
+  delegate_to: "{{ landscape_client_server }}"
+  when: landscape_client_server_on_prem
 
-- name: config | Adding Landscape App Server Cert
+- name: config | Add Landscape Server SSL public key (Self-Hosted)
   template:
     src: "etc/landscape/server.pem.j2"
-    dest: "{{ landscape_client_app_server_cert }}"
+    dest: "{{ landscape_client_ssl_cert }}"
   become: true
-  when: landscape_client_app_server_config
+  when: landscape_client_server_on_prem
 
-- name: config | Configuring Landscape Client
+- name: config | Configure Landscape Client
   template:
     src: "etc/landscape/client.conf.j2"
     dest: "/etc/landscape/client.conf"
