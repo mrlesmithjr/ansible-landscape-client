@@ -14,12 +14,11 @@
 
 # ansible-landscape-client
 
-An [Ansible](https://www.ansible.com) role to install/configure [Canonical Landscape Client](https://landscape.canonical.com/)
+An [Ansible](https://www.ansible.com) role to configure [Canonical Landscape Client](https://landscape.canonical.com/)
 
 ## Requirements
 
-A fully configured and ready to accept clients Landscape App Deployment. An
-[Ansible](https://www.ansible.com) role ready for use: [ansible-landscape-app](https://github.com/mrlesmithjr/ansible-landscape-app).
+A fully configured self-hosted or SaaS Landscape Server.
 
 ## Role Variables
 
@@ -27,25 +26,28 @@ A fully configured and ready to accept clients Landscape App Deployment. An
 ---
 # defaults file for ansible-landscape-client
 
-# Landscape App Info
-## Define below if using https://github.com/mrlesmithjr/ansible-landscape-app to
-## deploy Landscape App
-### define landscape primary app server
-landscape_client_app_server: "{{ groups['landscape_app'][0] }}"
-### defines server cert on client which will be created
-landscape_client_app_server_cert: '/etc/landscape/server.pem'
-### defines if client should be configured as being managed by an internal
-### Landscape App Server
-landscape_client_app_server_config: false
-### defines the ssl cert on the primary app server which should be captured
-### and copied to the client
-landscape_client_app_ssl_cert_file: '/etc/ssl/certs/ssl-cert-snakeoil.pem'
+# Landscape server
+landscape_client_server: "{{ groups['landscape_app'][0] }}"
 
+# Landscape server self-hosted
+landscape_client_server_on_prem: false
+# Landscape account name
+landscape_client_account_name: standalone
+## On-prem only
+# Server certificate on client that will be used
+landscape_client_ssl_cert: '/etc/landscape/server.pem'
+# Directory of the SSL public key on the primary app server.
+landscape_client_server_ssl_cert: '/etc/ssl/certs/ssl-cert-snakeoil.pem'
 
+# Landscape Server urls
+landscape_client_server_ping_url: 'http://landscape.canonical.com/ping'
+landscape_client_server_url: 'https://landscape.canonical.com/message-system'
+
+# Landscape client data path
 landscape_client_data_path: '/var/lib/landscape/client'
+
+# Landscape client log level: debug, info, warning, error or critical
 landscape_client_log_level: 'info'
-landscape_client_ping_url: 'http://landscape.canonical.com/ping'
-landscape_client_url: 'https://landscape.canonical.com/message-system'
 ```
 
 ## Dependencies
@@ -55,15 +57,20 @@ None
 ## Example Playbook
 
 ```yaml
-- hosts: landscape_clients
+---
+
+- name: Configure Landscape Client
+  hosts: all
   vars:
-    landscape_client_ping_url: 'http://node2.{{ pri_domain_name }}/ping'
-    landscape_client_url: 'https://node2.{{ pri_domain_name }}/message-system'
-    pri_domain_name: 'vagrant.local'
+    # mrlesmithjr.landscape-client
+    landscape_client_account_name: landscape-account-name
+    landscape_client_computer_title: "Compuster Title"
+    landscape_client_access_group: "access-group"
   roles:
     - role: ansible-landscape-client
-      tags:
-        - 'landscape_client'
+      vars:
+        landscape_tags: "web, db, apache"
+      when: ansible_distribution == 'Ubuntu'
 ```
 
 ## License
@@ -71,6 +78,8 @@ None
 MIT
 
 ## Author Information
+Modified by: Daniel Gibbs
+
 
 Larry Smith Jr.
 
