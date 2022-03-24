@@ -66,10 +66,9 @@ None
     landscape_client_account_name: landscape-account-name
     landscape_client_computer_title: "Compuster Title"
     landscape_client_access_group: "access-group"
+    landscape_client_tags: "web, db, apache"
   roles:
     - role: ansible-landscape-client
-      vars:
-        landscape_tags: "web, db, apache"
       when: ansible_distribution == 'Ubuntu'
 ```
 
