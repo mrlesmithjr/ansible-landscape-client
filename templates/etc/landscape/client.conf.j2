@@ -10,7 +10,7 @@ script_users = {{ landscape_client_script_users }}
 include_manager_plugins = ScriptExecution
 {% endif %}
 access_group = {{ landscape_client_access_group }}
-tags = {{ landscape_tags }}
+tags = {{ landscape_client_tags }}
 {% if landscape_client_server_on_prem %}
 ssl_public_key = {{ landscape_client_ssl_cert }}
 {% endif %}
