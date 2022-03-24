@@ -8,8 +8,8 @@ landscape_client_server: "{{ groups['landscape_app'][0] }}"
 landscape_client_server_on_prem: false
 # Landscape account name
 landscape_client_account_name: standalone
-## On-prem only
-## Server certificate on client that will be used
+# On-prem only
+# Server certificate on client that will be used
 landscape_client_ssl_cert: '/etc/landscape/server.pem'
 ## Directory of the SSL public key on the primary app server.
 landscape_client_server_ssl_cert: '/etc/ssl/certs/ssl-cert-snakeoil.pem'
