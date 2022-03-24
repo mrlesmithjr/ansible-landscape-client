@@ -1,13 +1,14 @@
 [client]
-access_group = {{ landscape_client_access_group }}
-account_name = {{ landscape_client_account_name }}
-computer_title = {{ landscape_client_computer_title }}
-data_path = {{ landscape_client_data_path }}
-include_manager_plugins = ScriptExecution
 log_level = {{ landscape_client_log_level }}
+url = {{ landscape_client_url }}
 ping_url = {{ landscape_client_ping_url }}
+data_path = {{ landscape_client_data_path }}
+computer_title = {{ landscape_client_computer_title }}
+account_name = {{ landscape_client_account_name }}
 script_users = {{ landscape_client_script_users }}
+include_manager_plugins = ScriptExecution
+access_group = {{ landscape_client_access_group }}
+tags = Datacentre
 {% if landscape_client_app_server_config %}
 ssl_public_key = {{ landscape_client_app_server_cert }}
 {% endif %}
-url = {{ landscape_client_url }}
