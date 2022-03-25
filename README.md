@@ -36,7 +36,7 @@ landscape_client_account_name: standalone
 ## On-prem only
 # Server certificate on client that will be used
 landscape_client_ssl_cert: '/etc/landscape/server.pem'
-# Directory of the SSL public key on the primary app server.
+## Directory of the SSL public key on the primary app server.
 landscape_client_server_ssl_cert: '/etc/ssl/certs/ssl-cert-snakeoil.pem'
 
 # Landscape Server urls
@@ -48,6 +48,9 @@ landscape_client_data_path: '/var/lib/landscape/client'
 
 # Landscape client log level: debug, info, warning, error or critical
 landscape_client_log_level: 'info'
+
+# Force landscape client to register
+landscape_client_force_register: false
 ```
 
 ## Dependencies

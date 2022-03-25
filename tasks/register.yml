@@ -1,20 +1,21 @@
 ---
-#- name: register | Check if Client is Already Registered
-#  stat:
-#    path: "/etc/landscape/.client_registered"
-#  become: true
-#  register: "_landscape_client_registered_check"
+- name: register | Check if Client is Already Registered
+  stat:
+    path: "/etc/landscape/.client_registered"
+  become: true
+  register: "_landscape_client_registered_check"
+  when: not landscape_client_force_register
 
 - name: register | Registering Client
   command: >
            landscape-config --silent
   become: true
-#  register: "_landscape_client_registered"
-#  when: not _landscape_client_registered_check['stat']['exists']
+  register: "_landscape_client_registered"
+  when: landscape_client_force_register or not _landscape_client_registered_check['stat']['exists']
 
-#- name: register | Mark Client As Registered
-#  file:
-#    path: "/etc/landscape/.client_registered"
-#    state: "touch"
-#  become: true
-#  when: _landscape_client_registered['changed']
+- name: register | Mark Client As Registered
+  file:
+    path: "/etc/landscape/.client_registered"
+    state: "touch"
+  become: true
+  when: _landscape_client_registered['changed']
