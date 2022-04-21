@@ -14,7 +14,7 @@
 
 # ansible-landscape-client
 
-An [Ansible](https://www.ansible.com) role to configure [Canonical Landscape Client](https://landscape.canonical.com/)
+An [Ansible](https://www.ansible.com) role to configure [Canonical Landscape Client](https://landscape.canonical.com/) on Debian Based Systems
 
 ## Requirements
 
@@ -72,7 +72,6 @@ None
     landscape_client_tags: "web, db, apache"
   roles:
     - role: ansible-landscape-client
-      when: ansible_distribution == 'Ubuntu'
 ```
 
 ## License
