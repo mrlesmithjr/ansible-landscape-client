@@ -2,7 +2,7 @@
 # tasks file for ansible-role-landscape-client
 - name: landscape client
   block:
-  - include_tasks: debian.yml
-  - include_tasks: config.yml
-  - include_tasks: register.yml
-  when: ansible_os_family == "Debian"
+    - include_tasks: ubuntu.yml
+    - include_tasks: config.yml
+    - include_tasks: register.yml
+  when: ansible_distribution == "Ubuntu"
