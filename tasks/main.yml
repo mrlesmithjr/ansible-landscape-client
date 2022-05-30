@@ -1,10 +1,10 @@
 ---
 # tasks file for ansible-role-andscape-client
-- include: debian.yml
+- include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- include: config.yml
+- include_tasks: config.yml
   when: ansible_os_family == "Debian"
 
-- include: register.yml
+- include_tasks: register.yml
   when: ansible_os_family == "Debian"

@@ -11,6 +11,7 @@
     landscape-config --silent
   become: true
   register: "_landscape_client_registered"
+  notify: "Mark Client As Registered"
   # yamllint disable-line rule:line-length
   when: landscape_client_force_register or not _landscape_client_registered_check['stat']['exists']
 
