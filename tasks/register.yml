@@ -1,24 +1,16 @@
 ---
-- name: register | Check if Client is Already Registered
+- name: check if landscape client is already registered
   ansible.builtin.stat:
     path: "/etc/landscape/.client_registered"
   become: true
   register: "_landscape_client_registered_check"
   when: not landscape_client_force_register
 
-- name: register | Registering Client
+- name: register landscape client
   ansible.builtin.command: >
     landscape-config --silent
   become: true
   register: "_landscape_client_registered"
-  notify: "restart landscape-client"
+  notify: "mark client as registered"
   # yamllint disable-line rule:line-length
   when: landscape_client_force_register or not _landscape_client_registered_check['stat']['exists']
-
-- name: register | Mark Client As Registered
-  ansible.builtin.file:
-    path: "/etc/landscape/.client_registered"
-    state: "touch"
-    mode: 0644
-  become: true
-  when: _landscape_client_registered
