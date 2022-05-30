@@ -1,5 +1,5 @@
 ---
-- name: Verify
+- name: verify
   hosts: all
   become: true
   gather_facts: false
