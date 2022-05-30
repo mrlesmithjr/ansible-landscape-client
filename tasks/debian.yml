@@ -1,5 +1,5 @@
 ---
-- name: debian | Installing Landscape Client
+- name: ensure landscape client is installed
   ansible.builtin.apt:
     name: "landscape-client"
     state: "present"

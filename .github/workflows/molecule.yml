@@ -4,15 +4,11 @@
 #
 
 name: Ansible Molecule
-
 on:
   push:
-    tags_ignore:
-      - "*"
   pull_request:
   schedule:
     - cron: "3 2 2 * *"
-
 jobs:
   lint:
     runs-on: ubuntu-20.04
@@ -39,6 +35,8 @@ jobs:
             tag: "focal"
           - image: "ubuntu"
             tag: "bionic"
+          - image: "enterpriselinux"
+            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v3

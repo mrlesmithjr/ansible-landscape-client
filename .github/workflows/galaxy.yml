@@ -4,10 +4,9 @@
 #
 
 name: Release to Ansible Galaxy
-
 on:
   release:
-    types: [created, edited, published, released]
+    types: [created, edited, published, release]
 jobs:
   release:
     runs-on: ubuntu-20.04
