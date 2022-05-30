@@ -10,3 +10,6 @@
   # installed. This role runs the `setup` module, so facts will be available
   # after running the role.
   gather_facts: false
+
+  roles:
+    - role: ansible-role-landscape-client
