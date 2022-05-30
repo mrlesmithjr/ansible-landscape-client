@@ -1,4 +1,4 @@
-# ansible-role-andscape-client
+# ansible-role-landscape-client
 
 An [Ansible](https://www.ansible.com) role to configure [Canonical Landscape Client](https://landscape.canonical.com/) on Debian Based Systems.
 
@@ -11,7 +11,7 @@ Landscape SaaS Account or self-hosted Landscape Server.
 ```yaml
 ---
 ---
-# defaults file for ansible-role-andscape-client
+# defaults file for ansible-role-landscape-client
 
 # Landscape server
 landscape_client_server: "{{ groups['landscape_server'][0] }}"
