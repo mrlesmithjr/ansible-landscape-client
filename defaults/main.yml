@@ -15,6 +15,9 @@ landscape_client_computer_title: "Computer Title"
 # Landscape Client access group
 landscape_client_access_group: "access-group"
 
+# Landscape Client tags
+landscape_client_tags: "tag1, tag2"
+
 ## Self-hosted only
 # Server certificate on client that will be used
 landscape_client_ssl_cert: "/etc/landscape/server.pem"
