@@ -1,5 +1,5 @@
 ---
-# defaults file for ansible-landscape-client
+# defaults file for ansible-role-andscape-client
 
 # Landscape server
 landscape_client_server: "{{ groups['landscape_server'][0] }}"
