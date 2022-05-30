@@ -4,7 +4,7 @@ An [Ansible](https://www.ansible.com) role to configure [Canonical Landscape Cli
 
 ## Requirements
 
-A fully configured Landscape SaaS or self-hosted Server.
+Landscape SaaS Account or self-hosted Landscape Server.
 
 ## Role Variables
 
