@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: landscape-client
+  namespace: dgibbs64
   author: Daniel Gibbs and Larry Smith Jr.
   description: Canonical Landscape Client for Ubuntu.
 
@@ -14,5 +15,7 @@ galaxy_info:
 
   galaxy_tags:
     - system
+    - monitoring
+    - Ubuntu
 
 dependencies: []
