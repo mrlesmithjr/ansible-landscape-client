@@ -8,6 +8,9 @@ landscape_client_server: "{{ groups['landscape_server'][0] }}"
 landscape_client_server_self_hosted: false
 # Landscape account name
 landscape_client_account_name: account-name
+
+landscape_client_computer_title: "Computer Title"
+
 ## Self-hosted only
 # Server certificate on client that will be used
 landscape_client_ssl_cert: "/etc/landscape/server.pem"
