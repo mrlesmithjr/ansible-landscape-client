@@ -5,14 +5,14 @@
   become: true
   register: "_landscape_client_ssl_cert"
   delegate_to: "{{ landscape_client_server }}"
-  when: landscape_client_server_on_prem
+  when: landscape_client_server_self_hosted
 
 - name: config | Add Landscape Server SSL public key (Self-Hosted)
   template:
     src: "etc/landscape/server.pem.j2"
     dest: "{{ landscape_client_ssl_cert }}"
   become: true
-  when: landscape_client_server_on_prem
+  when: landscape_client_server_self_hosted
 
 - name: config | Configure Landscape Client
   template:
