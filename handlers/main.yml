@@ -1,5 +1,5 @@
 ---
-# handlers file for ansible-landscape-client
+# handlers file for ansible-role-andscape-client
 - name: "restart landscape-client"
   service:
     name: "landscape-client"
