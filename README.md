@@ -80,7 +80,7 @@ None
   vars:
     # dgibbs64.landscape-client
     landscape_client_account_name: landscape-account-name
-    landscape_client_computer_title: "Computer Name"
+    landscape_client_computer_title: "Computer Title"
     landscape_client_access_group: "access-group"
     landscape_client_tags: "web, db, apache"
   roles:
@@ -97,7 +97,7 @@ Updated by: Daniel Gibbs
 
 - [Daniel Gibbs](https://danielgibbs.co.uk)
 
-Larry Smith Jr.
+Original by Larry Smith Jr.
 
 - [@mrlesmithjr](https://www.twitter.com/mrlesmithjr)
 - [EverythingShouldBeVirtual](http://www.everythingshouldbevirtual.com)
