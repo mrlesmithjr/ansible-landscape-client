@@ -5,10 +5,8 @@ galaxy_info:
   author: Daniel Gibbs and Larry Smith Jr.
   company: none
   description: Canonical Landscape Client for Ubuntu.
-
   license: MIT
-
-  min_ansible_version: 1.2
+  min_ansible_version: "2.10"
 
   platforms:
     - name: Ubuntu
@@ -18,6 +16,6 @@ galaxy_info:
   galaxy_tags:
     - system
     - monitoring
-    - Ubuntu
+    - ubuntu
 
 dependencies: []
