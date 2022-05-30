@@ -9,7 +9,11 @@ landscape_client_server_self_hosted: false
 # Landscape account name
 landscape_client_account_name: account-name
 
+# Landscape Client computer title
 landscape_client_computer_title: "Computer Title"
+
+# Landscape Client access group
+landscape_client_access_group: "access-group"
 
 ## Self-hosted only
 # Server certificate on client that will be used
