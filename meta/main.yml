@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: landscape-client
   author: Daniel Gibbs and Larry Smith Jr.
   description: Canonical Landscape Client for Ubuntu.
 
