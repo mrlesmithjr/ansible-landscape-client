@@ -11,9 +11,14 @@
     landscape-config --silent
   become: true
   register: "_landscape_client_registered"
-  notify: "Mark Client As Registered"
+  notify: "restart landscape-client"
   # yamllint disable-line rule:line-length
   when: landscape_client_force_register or not _landscape_client_registered_check['stat']['exists']
 
-- name: flush handlers
-  ansible.builtin.meta: flush_handlers
+- name: register | Mark Client As Registered
+  ansible.builtin.file:
+    path: "/etc/landscape/.client_registered"
+    state: "touch"
+    mode: 0644
+  become: true
+  when: _landscape_client_registered
