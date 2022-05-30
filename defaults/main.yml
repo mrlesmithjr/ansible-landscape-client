@@ -29,3 +29,6 @@ landscape_client_log_level: "info"
 
 # Force landscape client to register
 landscape_client_force_register: false
+
+# Users that can execute Lanscape scripts
+landscape_client_script_users: root
