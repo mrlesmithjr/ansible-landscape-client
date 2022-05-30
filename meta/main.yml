@@ -1,6 +1,6 @@
 galaxy_info:
   author: Daniel Gibbs and Larry Smith Jr.
-  description: An [Ansible](https://www.ansible.com) role to install/configure [Canonical Landscape Client](https://landscape.canonical.com/)
+  description: Canonical Landscape Client for Ubuntu.
 
   license: MIT
 

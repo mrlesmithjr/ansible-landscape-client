@@ -78,7 +78,7 @@ None
 - name: Configure Landscape Client
   hosts: all
   vars:
-    # dgibbs.landscape-client
+    # dgibbs64.landscape-client
     landscape_client_account_name: landscape-account-name
     landscape_client_computer_title: "Computer Name"
     landscape_client_access_group: "access-group"
