@@ -1,5 +1,5 @@
 galaxy_info:
-  author: Larry Smith Jr.
+  author: Daniel Gibbs and Larry Smith Jr.
   description: An [Ansible](https://www.ansible.com) role to install/configure [Canonical Landscape Client](https://landscape.canonical.com/)
 
   license: MIT

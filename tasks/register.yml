@@ -8,7 +8,7 @@
 
 - name: register | Registering Client
   command: >
-           landscape-config --silent
+    landscape-config --silent
   become: true
   register: "_landscape_client_registered"
   when: landscape_client_force_register or not _landscape_client_registered_check['stat']['exists']
