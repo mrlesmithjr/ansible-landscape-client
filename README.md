@@ -77,7 +77,7 @@ None
       - role: dgibbs64.landscape-client
 ```
 
-### Self-hosted
+### Landscape Self-hosted
 
 ```yaml
 ---
