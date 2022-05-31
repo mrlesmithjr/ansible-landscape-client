@@ -1,4 +1,4 @@
-# ansible-role-landscape-client
+# landscape_client
 
 An [Ansible](https://www.ansible.com) role to configure [Canonical Landscape Client](https://landscape.canonical.com/) on Ubuntu.
 
@@ -10,7 +10,7 @@ Landscape SaaS Account or self-hosted Landscape Server.
 
 ```yaml
 ---
-# defaults file for ansible-role-landscape-client
+# defaults file for landscape_client
 
 # Landscape server
 landscape_client_server: "{{ groups['landscape_server'][0] }}"
@@ -74,7 +74,7 @@ None
       landscape_client_access_group: "access-group"
       landscape_client_tags: "web, db, apache"
   roles:
-      - role: dgibbs64.landscape-client
+      - role: dgibbs64.landscape_client
 ```
 
 ### Landscape Self-hosted
@@ -92,7 +92,7 @@ None
       landscape_client_server_ping_url: "http://landscape.example.com/ping"
       landscape_client_server_url: "https://landscape.example.com/message-system"
   roles:
-      - role: dgibbs64.landscape-client
+      - role: dgibbs64.landscape_client
 ```
 
 ## License
