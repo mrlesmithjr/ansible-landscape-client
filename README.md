@@ -69,12 +69,12 @@ None
 - name: Configure Landscape Client
   hosts: all
   vars:
-      landscape_client_account_name: landscape-account-name
-      landscape_client_computer_title: "Computer Title"
-      landscape_client_access_group: "access-group"
-      landscape_client_tags: "web, db, apache"
+    landscape_client_account_name: landscape-account-name
+    landscape_client_computer_title: "Computer Title"
+    landscape_client_access_group: "access-group"
+    landscape_client_tags: "web, db, apache"
   roles:
-      - role: dgibbs64.landscape-client
+    - role: dgibbs64.landscape-client
 ```
 
 ### Self-hosted
@@ -84,15 +84,15 @@ None
 - name: Configure Landscape Client
   hosts: all
   vars:
-      landscape_client_server: "{{ groups['landscape_server'][0] }}"
-      landscape_client_account_name: landscape-account-name
-      landscape_client_computer_title: "Computer Title"
-      landscape_client_access_group: "access-group"
-      landscape_client_tags: "web, db, apache"
-      landscape_client_server_ping_url: "http://landscape.example.com/ping"
-      landscape_client_server_url: "https://landscape.example.com/message-system"
+    landscape_client_server: "{{ groups['landscape_server'][0] }}"
+    landscape_client_account_name: landscape-account-name
+    landscape_client_computer_title: "Computer Title"
+    landscape_client_access_group: "access-group"
+    landscape_client_tags: "web, db, apache"
+    landscape_client_server_ping_url: "http://landscape.example.com/ping"
+    landscape_client_server_url: "https://landscape.example.com/message-system"
   roles:
-      - role: dgibbs64.landscape-client
+    - role: dgibbs64.landscape-client
 ```
 
 ## License

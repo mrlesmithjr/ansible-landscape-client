@@ -8,19 +8,16 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: "3 2 2 * *"
+    - cron: "47 22 24 * *"
+
 jobs:
   lint:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
         uses: actions/checkout@v3
-        with:
-          path: "${{ github.repository }}"
-      - name: molecule
-        uses: robertdebock/molecule-action@4.0.8
-        with:
-          command: lint
+      - name: ansible-lint
+        uses: ansible-community/ansible-lint-action@main
   test:
     needs:
       - lint
@@ -35,10 +32,6 @@ jobs:
             tag: "focal"
           - image: "ubuntu"
             tag: "bionic"
-          - image: "debian"
-            tag: "latest"
-          - image: "enterpriselinux"
-            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -49,7 +42,7 @@ jobs:
       - name: parse apparmor for mysql
         run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - name: molecule
-        uses: robertdebock/molecule-action@4.0.8
+        uses: robertdebock/molecule-action@4.0.9
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
