@@ -32,6 +32,8 @@ jobs:
             tag: "focal"
           - image: "ubuntu"
             tag: "bionic"
+          - image: "rockylinux"
+            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v3
