@@ -6,7 +6,7 @@
 name: Release to Ansible Galaxy
 on:
   release:
-    types: [created, edited, published, release]
+    types: [created, edited, published, released]
 jobs:
   release:
     runs-on: ubuntu-20.04
@@ -15,3 +15,4 @@ jobs:
         uses: robertdebock/galaxy-action@1.2.1
         with:
           galaxy_api_key: ${{ secrets.galaxy_api_key }}
+          git_branch: main
