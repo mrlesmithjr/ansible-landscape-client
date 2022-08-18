@@ -8,3 +8,7 @@
     - name: run landscape-client --version
       ansible.builtin.command:
         cmd: landscape-client --version
+      when: ansible_distribution == "Ubuntu"
+
+    - name: check if connection still works
+      ansible.builtin.ping:
