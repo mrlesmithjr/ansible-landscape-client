@@ -10,7 +10,7 @@ Landscape SaaS Account or self-hosted Landscape Server.
 
 ```yaml
 ---
-# defaults file for ansible-role-landscape-client
+# defaults file for ansible-role-landscape_client
 
 # Landscape server
 landscape_client_server: "{{ groups['landscape_server'][0] }}"
