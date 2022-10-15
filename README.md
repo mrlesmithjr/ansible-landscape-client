@@ -2,6 +2,9 @@
 
 An [Ansible](https://www.ansible.com) role to configure [Canonical Landscape Client](https://landscape.canonical.com/) on Ubuntu.
 
+|GitHub|Quality|Downloads|Version|
+|------|-------|---------|-------|
+|[![github](https://github.com/dgibbs64/ansible-role-landscape_client/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions)|[![quality](https://img.shields.io/ansible/quality/59356)](https://galaxy.ansible.com/dgibbs64/landscape_client)|[![downloads](https://img.shields.io/ansible/role/d/59356)](https://galaxy.ansible.com/dgibbs64/landscape_client)|[![Version](https://img.shields.io/github/release/dgibbs64/ansible-role-landscape_client.svg)](https://github.com/dgibbs64/landscape_client/releases/)|
 ## Requirements
 
 Landscape SaaS Account or self-hosted Landscape Server.
