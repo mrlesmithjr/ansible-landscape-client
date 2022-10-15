@@ -1,12 +1,12 @@
 ---
-- name: check if landscape client is already registered
+- name: Check if landscape client is already registered
   ansible.builtin.stat:
     path: "/etc/landscape/.client_registered"
   become: true
   register: "_landscape_client_registered_check"
   when: not landscape_client_force_register
 
-- name: register landscape client
+- name: Register landscape client
   ansible.builtin.command: >
     landscape-config --silent
   become: true

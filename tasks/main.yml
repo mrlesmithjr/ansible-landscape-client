@@ -1,8 +1,13 @@
 ---
 # tasks file for ansible-role-landscape-client
-- name: landscape client
-  block:
-    - include_tasks: ubuntu.yml
-    - include_tasks: config.yml
-    - include_tasks: register.yml
+- name: Ubuntu
+  ansible.builtin.include_tasks: ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: Configure Landscape
+  ansible.builtin.include_tasks: config.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: Register Landscape
+  ansible.builtin.include_tasks: register.yml
   when: ansible_distribution == "Ubuntu"
