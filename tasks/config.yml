@@ -1,5 +1,5 @@
 ---
-- name: Get landscape server SSL public key (self-hosted)
+- name: "Get landscape server SSL public key (self-hosted)"
   become: true
   ansible.builtin.slurp:
     src: "{{ landscape_client_server_ssl_cert }}"
@@ -7,7 +7,7 @@
   delegate_to: "{{ landscape_client_server }}"
   when: landscape_client_server_self_hosted
 
-- name: Ensure landscape server SSL public key is set (self-hosted)
+- name: "Ensure landscape server SSL public key is set (self-hosted)"
   become: true
   ansible.builtin.template:
     src: "etc/landscape/server.pem.j2"
@@ -15,7 +15,7 @@
     mode: "0644"
   when: landscape_client_server_self_hosted
 
-- name: Configure landscape client
+- name: "Configure landscape client"
   become: true
   ansible.builtin.template:
     src: "etc/landscape/client.conf.j2"
@@ -23,7 +23,7 @@
     owner: "landscape"
     group: "root"
     mode: "0644"
-  notify: "restart landscape-client"
+  notify: "Restart landscape-client"
 
-- name: Flush handlers
+- name: "Flush handlers"
   ansible.builtin.meta: flush_handlers
