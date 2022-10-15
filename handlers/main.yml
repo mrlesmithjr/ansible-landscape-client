@@ -1,14 +1,14 @@
 ---
 # handlers file for ansible-role-landscape_client
-- name: Restart landscape-client
+- name: "Restart landscape-client"
   become: true
   ansible.builtin.service:
     name: "landscape-client"
     state: "restarted"
 
-- name: Mark client as registered
+- name: "Mark client as registered"
   become: true
   ansible.builtin.file:
     path: "/etc/landscape/.client_registered"
     state: "touch"
-    mode: 0644
+    mode: "0644"

@@ -12,7 +12,7 @@
   ansible.builtin.template:
     src: "etc/landscape/server.pem.j2"
     dest: "{{ landscape_client_ssl_cert }}"
-    mode: 0644
+    mode: "0644"
   when: landscape_client_server_self_hosted
 
 - name: Configure landscape client
@@ -22,7 +22,7 @@
     dest: "/etc/landscape/client.conf"
     owner: "landscape"
     group: "root"
-    mode: 0644
+    mode: "0644"
   notify: "restart landscape-client"
 
 - name: Flush handlers

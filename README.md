@@ -66,7 +66,7 @@ None
 
 ```yaml
 ---
-- name: Configure Landscape Client
+- name: "Configure Landscape Client"
   hosts: all
   vars:
     landscape_client_account_name: landscape-account-name
@@ -81,7 +81,7 @@ None
 
 ```yaml
 ---
-- name: Configure Landscape Client
+- name: "Configure Landscape Client"
   hosts: all
   vars:
     landscape_client_server: "{{ groups['landscape_server'][0] }}"

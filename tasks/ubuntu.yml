@@ -1,7 +1,6 @@
 ---
-- name: Ensure landscape client is installed
+- name: "Ensure landscape client is installed"
   become: true
   ansible.builtin.apt:
     name: "landscape-client"
     state: "present"
-
