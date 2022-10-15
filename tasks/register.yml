@@ -7,9 +7,9 @@
   when: not landscape_client_force_register
 
 - name: Register landscape client
+  become: true
   ansible.builtin.command: >
     landscape-config --silent
-  become: true
   register: "_landscape_client_registered"
   notify: "mark client as registered"
   when: landscape_client_force_register or not _landscape_client_registered_check['stat']['exists']
