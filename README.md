@@ -4,7 +4,7 @@ An [Ansible](https://www.ansible.com) role to configure [Canonical Landscape Cli
 
 |GitHub|Quality|Downloads|Version|
 |------|-------|---------|-------|
-|[![github](https://github.com/dgibbs64/ansible-role-landscape_client/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions)|[![quality](https://img.shields.io/ansible/quality/59356)](https://galaxy.ansible.com/dgibbs64/landscape_client)|[![downloads](https://img.shields.io/ansible/role/d/59356)](https://galaxy.ansible.com/dgibbs64/landscape_client)|[![Version](https://img.shields.io/github/release/dgibbs64/ansible-role-landscape_client.svg)](https://github.com/dgibbs64/landscape_client/releases/)|
+|[![[github](https://github.com/dgibbs64/ansible-role-landscape_client/workflows/Ansible%20Molecule/badge.svg)](https://img.shields.io/github/workflow/status/dgibbs64/ansible-role-landscape_client/Ansible%20Molecule?label=molecule&logo=ansible&style=flat-square)](https://github.com/dgibbs64/ansible-role-landscape_client/actions)|[![[quality](https://img.shields.io/ansible/quality/59356)](https://img.shields.io/ansible/quality/59356?logo=ansible&style=flat-square)](https://galaxy.ansible.com/dgibbs64/landscape_client)|[![[downloads](https://img.shields.io/ansible/role/d/59356)](https://img.shields.io/ansible/role/d/59356?color=EE0000&logo=ansible&style=flat-square)](https://galaxy.ansible.com/dgibbs64/landscape_client)|[![[Version](https://img.shields.io/github/release/dgibbs64/ansible-role-landscape_client.svg)](https://img.shields.io/github/v/release/dgibbs64/ansible-role-landscape_client?logo=github&style=flat-square)](https://github.com/dgibbs64/landscape_client/releases/)|
 ## Requirements
 
 Landscape SaaS Account or self-hosted Landscape Server.
